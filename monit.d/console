@@ -7,10 +7,10 @@
 ## enable SSL for the HTTP interface.
 #
 set httpd port 2812 and
-    use address localhost  # only accept connection from localhost
-    allow localhost        # allow localhost to connect to the server and
-    allow admin:monit      # require user 'admin' with password 'monit'
-    #with ssl {            # enable SSL/TLS and set path to server certificate
-    #    pemfile: /etc/ssl/certs/monit.pem
-    #}
+    use address 192.168.100.100  # only accept connection from localhost
+    allow 192.168.100.1          # allow localhost to connect to the server and
+    allow admin:monit            # require user 'admin' with password 'monit'
+    with ssl {                  # enable SSL/TLS and set path to server certificate
+        pemfile: /etc/ssl/certs/monit.pem
+    }
 
