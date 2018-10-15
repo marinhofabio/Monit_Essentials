@@ -1,16 +1,6 @@
-## Monit has an embedded HTTP interface which can be used to view status of
-## services monitored and manage services from a web interface. The HTTP
-## interface is also required if you want to issue Monit commands from the
-## command line, such as 'monit status' or 'monit restart service' The reason
-## for this is that the Monit client uses the HTTP interface to send these
-## commands to a running Monit daemon. See the Monit Wiki if you want to
-## enable SSL for the HTTP interface.
-#
+# EXAMPLE 1 #
 set httpd port 2812 and
-    use address 192.168.100.100  # only accept connection from localhost
-    allow 192.168.100.1          # allow localhost to connect to the server and
+    use address 192.168.100.100  # bind the service to accept requests from 192.168.100.100
+    allow 192.168.100.1          # allow host 192.168.100.1 to connect to the server and
     allow admin:monit            # require user 'admin' with password 'monit'
-    with ssl {                   # enable SSL/TLS and set path to server certificate
-        pemfile: /etc/ssl/certs/monit.pem
-    }
 
