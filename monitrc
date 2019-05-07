@@ -1,9 +1,6 @@
 #########################
 ## Monit control file  ##
 #########################
-#########################
-##   Global section    ##
-#########################
 
 set daemon 30 with start delay 240  
 set log syslog
@@ -205,14 +202,9 @@ set alert your-name@your.domain not on { instance, action }
     if saturation > 90% then alert
     if download > 10 MB/s then alert
     if total uploaded > 1 GB in last hour then alert
-#
-#
+
 ###############################################################################
 ## Includes
 ###############################################################################
-##
-## It is possible to include additional configuration parts from other files or
-## directories.
-#
+
 include /etc/monit.d/*
-#
