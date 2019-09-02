@@ -1,6 +1,5 @@
 # EXAMPLE 1 #
 set httpd port 2812 and
-    use address 192.168.100.100  # bind the service to accept requests from 192.168.100.100
-    allow 192.168.100.1          # allow host 192.168.100.1 to connect to the server and
-    allow admin:monit            # require user 'admin' with password 'monit'
-
+    use address 192.168.100.100   
+    allow 192.168.100.1          
+    allow admin:monit             
